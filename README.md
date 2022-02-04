@@ -108,3 +108,15 @@ Harrison Ford
 Carrie Fisher
 ___________________________________
 fim
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
+
+	<named-query name="obterFilmesComNotaMaiorQue">
+	 <query>
+	 	select distinct f from Filme f
+	 	join fetch f.atores
+	 	where f.nota > :nota
+	 </query>
+	</named-query>
+
+</entity-mappings>
